@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Enable the default Nginx configuration
+if [ -f /etc/nginx/sites-enabled/default ]; then
+    sudo rm /etc/nginx/sites-enabled/default || { echo "Failed to remove existing symlink. Exiting."; exit 1; }
+fi
+
+sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default || { echo "Failed to create symlink. Exiting."; exit 1; }
+
+# Restart Nginx
+sudo service nginx restart || { echo "Failed to restart Nginx. Exiting."; exit 1; }
+
+# Find and kill the Nginx process
+nginx_pid=$(pgrep nginx | head -1)
+if [ -n "$nginx_pid" ]; then
+    sudo kill "$nginx_pid" || { echo "Failed to kill Nginx process. Exiting."; exit 1; }
+else
+    echo "Nginx process not found."
+fi

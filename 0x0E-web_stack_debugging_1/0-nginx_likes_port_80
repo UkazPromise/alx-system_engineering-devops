@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# Enable the default Nginx configuration
+if [ ! -f /etc/nginx/sites-enabled/default ]; then
+    sudo ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+fi
+
+# Restart Nginx
+sudo service nginx restart
