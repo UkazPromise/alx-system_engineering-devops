@@ -1,0 +1,19 @@
+# Start a Docker container based on the holbertonschool/265-0 image, exposing port 8080 on the host and mapping it to port 80 in the container
+docker run -p 8080:80 -d -it holbertonschool/265-0
+
+# Connect to the running container
+docker exec -it <container_id> /bin/bash
+
+# Update package repositories and install Apache
+apt-get update
+apt-get install -y apache2
+
+# Create a simple HTML file containing "Hello Holberton"
+echo "Hello Holberton" > /var/www/html/index.html
+
+# Restart Apache to apply changes
+service apache2 restart
+
+# Exit the container
+exit
+
