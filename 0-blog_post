@@ -1,0 +1,37 @@
+Have you ever wondered what happens in the blink of an eye when you type a web address (URL) like "https://www.google.com" and press Enter? It might seem like magic, but a complex series of events unfolds behind the scenes to bring the desired website to your screen. Let's delve into the journey your request takes:
+
+1. DNS Request: Decoding the Address
+
+Your computer doesn't understand website names like "google.com." It communicates using numerical addresses called IP addresses.
+The first step is a DNS (Domain Name System) request. Your computer acts like a phone book, asking a DNS server to translate "google.com" into its corresponding IP address.
+There might be multiple DNS servers involved, but eventually, the correct IP address for "google.com" is found.
+2. TCP/IP: The Delivery Protocol
+
+Now that you have the IP address, it's like having a phone number. You need a way to establish a connection and send data. Here's where TCP/IP (Transmission Control Protocol/Internet Protocol) comes in.
+TCP acts like a reliable mail carrier, ensuring your data packets (requests and responses) arrive in the correct order and without errors.
+IP acts like the addressing system, directing the packets to the right destination based on the IP address.
+3. Firewall: The Gatekeeper
+
+Before reaching the website's server, your request might encounter a firewall. This is a security system that acts like a gatekeeper, filtering incoming and outgoing traffic based on pre-defined rules. Only authorized traffic is allowed to pass through.
+4. HTTPS/SSL: Secure Communication
+
+When the URL starts with "https," it indicates a secure connection.
+HTTPS (Hypertext Transfer Protocol Secure) utilizes SSL/TLS (Secure Sockets Layer/Transport Layer Security) encryption. This creates a secure tunnel between your computer and the website, scrambling the data to prevent eavesdropping.
+5. Load Balancer: Distributing the Load
+
+Popular websites often experience high traffic. A load balancer acts like a traffic controller, distributing incoming requests across multiple web servers to ensure smooth performance and prevent overloading any single server.
+6. Web Server: Serving the Content
+
+The request finally reaches the web server, the computer that stores the website's files. The web server interprets your request (e.g., displaying a webpage) and locates the necessary resources on its storage.
+7. Application Server (Optional): Dynamic Content
+
+Some websites use an application server in addition to the web server. This server handles more complex tasks like processing user input, database interactions, and generating dynamic content.
+8. Database (Optional): Information Retrieval
+
+Websites often rely on databases to store and manage information. If the requested webpage involves retrieving data (e.g., search results, product information), the application server might interact with a database to fetch the relevant information.
+9. Response and Rendering: Bringing the Website to Life
+
+The web server sends back a response that includes the requested content (HTML, images, etc.). Your browser receives this response, interprets the code, and renders the website on your screen.
+10. The Cycle Continues
+
+As you interact with the website (clicking links, submitting forms), new requests are sent and processed, following the same journey to update the content on your screen.
