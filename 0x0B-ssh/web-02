@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# connect private key to server 52.86.179.130
+ssh -i ~/.ssh/id_rsa ubuntu@52.86.179.130

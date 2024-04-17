@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# to configure the ssh not to request passcode for the host
+Host *
+      PasswordAuthentication no
+      IdentifyFile ~/.ssh/school
