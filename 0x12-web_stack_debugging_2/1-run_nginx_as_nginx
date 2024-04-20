@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Create nginx user if it doesn't exist
+if ! id -u nginx &>/dev/null; then
+    useradd -r -M nginx
+fi
+
+# Stop nginx service if it's running
+service nginx stop
+
+# Change ownership of nginx files to nginx user
+chown -R nginx:nginx /var/log/nginx /var/lib/nginx
+
+# Edit nginx configuration to run as nginx user and listen on port 8080
+sed -i 's/user www-data;/user nginx;/g' /etc/nginx/nginx.conf
+sed -i 's/listen 80 default_server;/listen 8080 default_server;/g' /etc/nginx/sites-available/default
+
+# Restart nginx service
+service nginx start
+
